@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Tra cứu thông tin vé";
+}
+
+<h2>Tra cứu thông tin vé</h2>
+
+@if (ViewBag.ThongTinVe != null)
+{
+    <h3>Thông tin vé:</h3>
+    <p>@ViewBag.ThongTinVe</p>
+}
+
+@if (ViewBag.Error != null)
+{
+    <p class="text-danger">@ViewBag.Error</p>
+}
+
+@using (Html.BeginForm("Tracuuthongtinve", "Ticket", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="nhapsove">Nhập mã số vé:</label>
+        <input type="text" name="nhapsove" id="nhapsove" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Tra cứu</button>
+}
